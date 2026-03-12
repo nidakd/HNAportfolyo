@@ -3,6 +3,7 @@ education/
 
 # Assignment PDF
 *.pdf
+!docs/site-accounting-app-report.pdf
 
 # IDE
 .vscode/

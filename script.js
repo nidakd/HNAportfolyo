@@ -96,6 +96,27 @@ darkModeToggle.addEventListener('click', function() {
 });
 
 // ========== 5. SCROLL REVEAL ANIMATION ==========
+// Tüm section'lar scroll ile görünür olsun
+const pageSections = document.querySelectorAll('section');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            sectionObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+});
+
+pageSections.forEach((section, index) => {
+    section.classList.add('section-reveal');
+    section.style.transitionDelay = `${index * 0.06}s`;
+    sectionObserver.observe(section);
+});
+
 // Kartların scroll ile animasyonlu görünmesi
 const cards = document.querySelectorAll('.skill-card, .project-card, .experience-card, .comment-card');
 

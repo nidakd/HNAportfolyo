@@ -220,7 +220,7 @@ section p {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
 }
@@ -298,7 +298,8 @@ section p {
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
     position: relative;
-    height: 350px;
+    min-height: 350px;
+    height: auto;
     border: 1px solid var(--border-color);
 }
 
@@ -323,6 +324,10 @@ section p {
     padding: 20px;
     text-align: left;
     background: var(--card-bg);
+}
+
+.project-card.no-image .overlay {
+    padding-top: 28px;
 }
 
 .project-card .overlay h3 {
@@ -350,14 +355,20 @@ section p {
     color: var(--accent-light);
 }
 
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+}
+
 /* ========== Experience Section ========== */
 #Experience {
     background: linear-gradient(135deg, var(--dark-bg) 0%, #0a0e1a 100%);
 }
 
 .experience-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 40px;
     max-width: 1400px;
@@ -389,9 +400,16 @@ section p {
 }
 
 .experience-card:hover {
-    transform: translateX(10px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
     border-color: var(--accent-color);
+}
+
+.experience-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 15px);
+    margin: 0 auto;
+    width: 100%;
 }
 
 .experience-card h3 {
@@ -627,35 +645,90 @@ section p {
     transform: scale(1.05);
 }
 
+/* ========== Section Glow Effects ========== */
+#Skills,
+#Experience,
+#Comments {
+    position: relative;
+}
+
+#Skills::after,
+#Experience::after,
+#Comments::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(188, 124, 14, 0.5), transparent);
+}
+
+#Home::after,
+#About::after,
+#Projects::after,
+#Contact::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(188, 124, 14, 0.3), transparent);
+}
+
+#Home,
+#About,
+#Projects,
+#Contact {
+    position: relative;
+}
+
 /* ========== Light Mode Styles ========== */
 body.light-mode {
     --dark-bg: #ffffff;
-    --darker-bg: #f8f9fa;
+    --darker-bg: #f4f4f5;
     --card-bg: #ffffff;
     --card-hover-bg: #f9fafb;
     --text-white: #1a1a1a;
     --text-light: #4a4a4a;
     --text-lighter: #2a2a2a;
     --border-color: #e5e5e5;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode header {
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 body.light-mode #Home {
     background: #ffffff;
 }
 
+body.light-mode #About,
+body.light-mode #Projects,
+body.light-mode #Contact {
+    background: #f4f4f5;
+}
+
 body.light-mode #Skills,
 body.light-mode #Experience,
 body.light-mode #Comments {
-    background: #f8f9fa;
+    background: #ffffff;
 }
 
-body.light-mode header {
-    background: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+body.light-mode #Skills::after,
+body.light-mode #Experience::after,
+body.light-mode #Comments::after,
+body.light-mode #Home::after,
+body.light-mode #About::after,
+body.light-mode #Projects::after,
+body.light-mode #Contact::after {
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
 }
 
 /* ========== Footer ========== */
@@ -673,6 +746,12 @@ footer p {
 }
 
 /* ========== Responsive Design ========== */
+@media (max-width: 1024px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     section h1 {
         font-size: 2em;
@@ -697,8 +776,13 @@ footer p {
     }
     
     .skills-container,
-    .projects-container {
+    .projects-container,
+    .experience-container {
         grid-template-columns: 1fr;
+    }
+
+    .experience-card:last-child {
+        max-width: 100%;
     }
     
     .profile-picture img {
@@ -738,15 +822,13 @@ footer p {
 }
 
 /* ========== Scroll Animations ========== */
-section {
+.section-reveal {
     opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-section:nth-child(1) { animation-delay: 0.1s; }
-section:nth-child(2) { animation-delay: 0.15s; }
-section:nth-child(3) { animation-delay: 0.2s; }
-section:nth-child(4) { animation-delay: 0.25s; }
-section:nth-child(5) { animation-delay: 0.3s; }
-section:nth-child(6) { animation-delay: 0.35s; }
-section:nth-child(7) { animation-delay: 0.4s; }
+.section-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
