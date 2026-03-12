@@ -1,0 +1,555 @@
+/* ========== CSS Reset & Base Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #1e40af;
+    --accent-color: #3b82f6;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #000000;
+    --card-bg: #1a1a1a;
+    --card-hover-bg: #252525;
+    --text-white: #ffffff;
+    --text-light: #a1a1aa;
+    --text-lighter: #d4d4d8;
+    --border-color: #2a2a2a;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+    --gradient-dark: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    --gradient-darker: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--dark-bg);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ========== Header & Navigation ========== */
+header {
+    background: var(--gradient-dark);
+    color: var(--text-white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.navbar ul li {
+    margin: 0 5px;
+}
+
+.navbar ul li a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s ease;
+}
+
+.navbar ul li a:hover::before {
+    left: 0;
+}
+
+.navbar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.navbar ul li a:active {
+    transform: translateY(0);
+}
+
+/* ========== Section Base Styles ========== */
+section {
+    padding: 80px 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+section h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--accent-color), #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--text-white);
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+section p {
+    color: var(--text-light);
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* ========== Home Section ========== */
+#Home {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient-darker);
+    position: relative;
+}
+
+#Home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(59,130,246,0.1)"/></svg>');
+    opacity: 0.3;
+    z-index: 0;
+}
+
+#Home > * {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-picture {
+    margin-bottom: 30px;
+}
+
+.profile-picture img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow-xl);
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-picture img:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4);
+}
+
+.title {
+    font-size: 1.3em;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* ========== About Section ========== */
+#About {
+    background: var(--darker-bg);
+}
+
+#About p {
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* ========== Skills Section ========== */
+#Skills {
+    background: var(--dark-bg);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover::before {
+    transform: scaleX(1);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+    background: var(--card-hover-bg);
+    border-color: var(--primary-color);
+}
+
+.skill-card i {
+    font-size: 3em;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 1.3em;
+    margin: 15px 0 10px;
+    color: var(--text-white);
+}
+
+.skill-card p {
+    color: var(--text-light);
+    font-size: 0.95em;
+}
+
+/* ========== Projects Section ========== */
+#Projects {
+    background: var(--darker-bg);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    height: 350px;
+    border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-card .overlay {
+    padding: 20px;
+    text-align: left;
+    background: var(--card-bg);
+}
+
+.project-card .overlay h3 {
+    font-size: 1.3em;
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.project-card .overlay p {
+    color: var(--text-light);
+    font-size: 0.95em;
+    margin: 0;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #60a5fa;
+}
+
+/* ========== Experience Section ========== */
+#Experience {
+    background: var(--dark-bg);
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    text-align: left;
+    position: relative;
+    padding-left: 50px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+}
+
+.experience-card:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.experience-card h3 {
+    font-size: 1.4em;
+    color: var(--text-white);
+    margin-bottom: 5px;
+}
+
+.experience-card .company {
+    font-size: 1.1em;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.experience-card .date {
+    color: var(--text-light);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.experience-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 10px 0;
+}
+
+/* ========== Contact Section ========== */
+#Contact {
+    background: var(--darker-bg);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: var(--gradient-dark);
+    color: var(--text-white);
+    padding: 25px 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--primary-color);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.contact-card i {
+    font-size: 2em;
+}
+
+.contact-info h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    font-size: 0.9em;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* ========== Footer ========== */
+footer {
+    background: var(--dark-bg);
+    color: var(--text-white);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: var(--text-white);
+    opacity: 0.8;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 2em;
+    }
+    
+    section h2 {
+        font-size: 1.8em;
+    }
+    
+    .navbar ul {
+        flex-direction: row;
+        gap: 5px;
+    }
+    
+    .navbar ul li a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    section {
+        padding: 60px 15px;
+    }
+    
+    .skills-container,
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-picture img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    section h1 {
+        font-size: 1.8em;
+    }
+    
+    section h2 {
+        font-size: 1.5em;
+    }
+    
+    .title {
+        font-size: 1.1em;
+    }
+}
+
+/* ========== Animations ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ========== Scroll Animations ========== */
+section {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+section:nth-child(6) { animation-delay: 0.6s; }
