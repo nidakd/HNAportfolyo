@@ -724,6 +724,27 @@ body.light-mode #Contact::after {
     background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
 }
 
+body.light-mode .contact-card {
+    background: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid #d4a24b;
+}
+
+body.light-mode .contact-card i {
+    color: #bc7c0e;
+}
+
+body.light-mode .contact-info h3,
+body.light-mode .contact-info p {
+    color: #1a1a1a;
+    opacity: 1;
+}
+
+body.light-mode .contact-card:hover {
+    background: #fff8ec;
+    border-color: #bc7c0e;
+}
+
 /* ========== Footer ========== */
 footer {
     background: var(--dark-bg);
