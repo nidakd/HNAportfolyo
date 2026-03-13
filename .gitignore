@@ -1,32 +1,6 @@
-# Education files - not to be uploaded
 education/
+.vscode/
+.DS_Store
 
-# Assignment PDF
 *.pdf
 !docs/site-accounting-app-report.pdf
-
-# IDE
-.vscode/
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
