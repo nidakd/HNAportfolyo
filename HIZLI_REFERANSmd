@@ -1,0 +1,287 @@
+# Hızlı Referans Rehberi
+
+## En Sık Yapılan İşlemler
+
+### 1️⃣ Adı Değiştirme
+```
+Dosya: index.html (satır 7, 10, 20)
+Dosya: src/components/Home.jsx (satır 96, 104)
+Ara ve Değiştir: "Hasibe Nida" → "Adınız Soyadınız"
+```
+
+### 2️⃣ Sosyal Medya Linki Ekleme
+```
+Dosya: src/components/Contact.jsx
+Ara: `const contactItems`
+Ekle: { icon: IconAdı, label: "Ağ Adı", link: "https://..." }
+```
+
+### 3️⃣ Proje Ekleme
+```
+Dosya: src/components/Projects.jsx
+Ara: `const projects`
+Ekle: { id: 2, title: "...", description: "...", technologies: [...], image: "/img/...", link: "...", github: "..." }
+Dosya: public/img/ klasörüne project2.png ekle
+```
+
+### 4️⃣ Deneyim Ekleme
+```
+Dosya: src/components/Experience.jsx
+Ara: `const experiences`
+Ekle: { company: "...", position: "...", date: "...", description: "..." }
+```
+
+### 5️⃣ Yetenek Ekleme
+```
+Dosya: src/components/Skills.jsx
+Ara: skills array veya object
+Ekle: "Yeni Yetenek"
+```
+
+### 6️⃣ Tema Rengini Değiştirme
+```
+Dosya: src/index.css
+Ara: --color-accent: #DFFF00;
+Değiştir: --color-accent: #YENİ-RENK;
+
+Renk Seçtirme: https://www.color-hex.com/
+Örnek Renkler:
+  Turuncu: #FF8C00
+  Mor: #9D4EDD
+  Turkuaz: #00D9FF
+  Pembe: #FF006E
+```
+
+### 7️⃣ Arka Plan Görseli Değiştirme
+```
+Dosya: public/img/ klasörüne yeni görsel koy (hero.png olarak)
+Veya:
+  Dosya: src/components/Home.jsx (satır 88)
+  Değiştir: src="/img/hero.png" → src="/img/yeni-gorsel.png"
+```
+
+### 8️⃣ Sunucuyu Başlatma / Derleme
+```
+Geliştirme sunucusu:
+  npm run dev
+  → http://localhost:5173 açılır
+
+Derleme (production):
+  npm run build
+  → dist/ klasöründe dosyalar oluşur
+
+Derlenen dosyayı test etme:
+  npm run preview
+```
+
+---
+
+## CSS Renkler Hızlı Referans
+
+```css
+/* Ana Renkler */
+--color-accent: #DFFF00;           /* Sarı */
+--color-dark-bg: #151515;          /* Arka plan */
+--color-darker-bg: #101010;        /* Daha koyu */
+--color-card-bg: #1A1A1A;          /* Kartlar */
+--color-text-light: #A3A3A3;       /* Açık metin */
+--color-border-color: #2A2A2A;     /* Kenarlar */
+```
+
+---
+
+## Tailwind CSS Sık Kullanılan Sınıflar
+
+| Amaç | Kod |
+|------|-----|
+| Padding | `p-4`, `px-6`, `py-3` |
+| Margin | `m-4`, `mb-8`, `mt-2` |
+| Genişlik | `w-full`, `w-1/2`, `w-screen` |
+| Yükseklik | `h-screen`, `h-96`, `min-h-[500px]` |
+| Flex | `flex items-center justify-center` |
+| Grid | `grid grid-cols-3 gap-4` |
+| Renk | `text-white`, `bg-dark-bg`, `bg-[var(--color-accent)]` |
+| Border | `border border-white/10`, `rounded-full` |
+| Hover | `hover:opacity-80`, `hover:text-white` |
+| Mobil | `md:hidden` (mobilde gizli), `hidden md:block` (tablet+da görünür) |
+| Animasyon | `transition-colors duration-300` |
+
+---
+
+## Framer Motion Animasyonu Hızlı Kod
+
+```jsx
+// Basit fade in
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.6 }}
+>
+  İçerik
+</motion.div>
+
+// Kaydırma + fade
+<motion.div
+  initial={{ x: -50, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+>
+  İçerik
+</motion.div>
+
+// Döngü animasyonu
+<motion.div
+  animate={{ rotate: 360 }}
+  transition={{ duration: 4, repeat: Infinity }}
+>
+  Dönen içerik
+</motion.div>
+```
+
+---
+
+## Klasör Yapısı
+
+```
+src/
+  ├── components/          ← Sayfa bölümleri burada
+  │   ├── Home.jsx        ← Ana sayfa
+  │   ├── About.jsx       ← Hakkında
+  │   ├── Skills.jsx      ← Yetenekler
+  │   ├── Projects.jsx    ← Projeler
+  │   ├── Experience.jsx  ← İş deneyimi
+  │   ├── Testimonials.jsx ← Öneriler
+  │   ├── Contact.jsx     ← İletişim
+  │   ├── Navbar.jsx      ← Menü
+  │   ├── Footer.jsx      ← Alt bilgi
+  │   ├── ScrollToTop.jsx ← Yukarı butonu
+  │   └── StaggeredMenu.jsx ← Mobil menü
+  ├── App.jsx             ← Ana bileşen
+  ├── main.jsx            ← Giriş
+  └── index.css           ← Global stiller
+
+public/
+  ├── img/
+  │   └── hero.png        ← Arka plan görseli
+  ├── favicon.svg         ← Site simgesi
+  ├── robots.txt          ← SEO
+  └── sitemap.xml         ← Site haritası
+```
+
+---
+
+## SEO Meta Etiketleri Güncellemek
+
+**Dosya**: `index.html`
+
+```html
+<!-- Başlık -->
+<title>Adınız | Pozisyonunuz</title>
+
+<!-- Açıklama -->
+<meta name="description" content="Kısa özgeçmiş" />
+
+<!-- Anahtar kelimeler -->
+<meta name="keywords" content="python, react, veri" />
+
+<!-- Facebook/LinkedIn -->
+<meta property="og:title" content="Başlık" />
+<meta property="og:description" content="Açıklama" />
+<meta property="og:image" content="https://siteadı.com/img/hero.png" />
+
+<!-- Twitter -->
+<meta property="twitter:title" content="Başlık" />
+<meta property="twitter:description" content="Açıklama" />
+```
+
+---
+
+## Dosya Eklemek
+
+### Görsel Eklemek
+1. `public/img/` klasörüne dosya koy (örn: `myimage.png`)
+2. JSX dosyasında kullan:
+   ```jsx
+   <img src="/img/myimage.png" alt="Açıklaması" />
+   ```
+
+### Yeni Bileşen Oluşturmak
+1. `src/components/` klasörde `MyComponent.jsx` oluştur
+2. Kod yaz:
+   ```jsx
+   const MyComponent = () => {
+     return <section id="MyComponent">İçerik</section>;
+   };
+   export default MyComponent;
+   ```
+3. `src/App.jsx` açıp import et ve ekle:
+   ```jsx
+   import MyComponent from './components/MyComponent';
+   // ... App fonksiyonunda <MyComponent /> ekle
+   ```
+
+---
+
+## Hatalı Hızlı Çözümler
+
+| Hata | Çözüm |
+|------|-------|
+| Modül bulunamadı | `npm install` |
+| Sunucu başlamıyor | Porta kontrol et: `npm run dev` |
+| Stil yüklenmedi | `npm install tailwindcss` |
+| Görsel yüklenmiyor | Dosya yolu kontrol et (`public/img/`) |
+| Animasyon çalışmıyor | Framer Motion bağımlılığı kontrol: `npm install framer-motion` |
+
+---
+
+## Yararlı Linkler
+
+- **Tailwind CSS**: https://tailwindcss.com/docs
+- **Framer Motion**: https://www.framer.com/motion/
+- **React**: https://react.dev
+- **Vite**: https://vite.dev
+- **Renkler**: https://www.color-hex.com/
+- **İkonlar (Lucide)**: https://lucide.dev
+- **SEO Kontrol**: https://validator.schema.org/
+- **Responsive Test**: https://responsivedesignchecker.com/
+
+---
+
+## Git Komutları (İsteğe Bağlı)
+
+```bash
+# Değişiklikleri kontrol et
+git status
+
+# Tüm dosyaları hazırla
+git add .
+
+# Değişiklikleri kaydet
+git commit -m "Açıklama"
+
+# Sunucuya gönder
+git push
+
+# Önceki versiyona geri dön
+git checkout <commit-hash>
+```
+
+---
+
+## İpuçları 💡
+
+✅ **Yapılacaklar:**
+- Her değişiklik sonrası `npm run dev` ile test et
+- Büyük görselleri compression sitelerinde küçült
+- Cep telefonu ile sitenin görünümünü test et
+- SEO linklerini doğrula
+
+❌ **Yapılmayacaklar:**
+- node_modules klasörünü GitHub'a yükleme
+- API anahtarlarını koda yazmama
+- Eski bileşenleri sil; yorum yap veya `legacy/` taşı
+- Binlerce kütüphane ekleme
+
+---
+
+**Soruna hızlı çözüm bulmak için bu rehberi kullan! 🚀**
