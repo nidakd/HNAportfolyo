@@ -6,7 +6,7 @@ const projects = [
     desc: 'A professional accounting interface for residential site/building management, developed with Python, Streamlit, and PostgreSQL. It manages dues, fuel, and carry-over debts with block-based tracking, FIFO-based collection logic, and automated receipt generation. The project also supports CSV import and follows a modular architecture for scalability and maintainability.',
     links: [
       { text: 'View Project ->', url: 'https://github.com/nidakd/site-accounting-app' },
-      { text: 'Download PDF Report ->', url: 'docs/site-accounting-app-report.pdf', download: true }
+      { text: 'Download PDF Report ->', url: '/docs/site-accounting-app-report.pdf', download: true }
     ]
   },
   {
