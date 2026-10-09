@@ -28,3 +28,11 @@ DOKUMENTASYON.md
 BILESEN_ORNEKLERI.md
 HIZLI_REFERANSmd
 legacy/docs/
+YAPILACAKLAR.md
+.claude/
+
+# Unused / legacy files (kept locally, not published)
+legacy/
+public/icons.svg
+public/img/nida.jpeg
+public/img/nida_main.jpeg
