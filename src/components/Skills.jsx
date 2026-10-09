@@ -1,31 +1,46 @@
 import { motion } from 'framer-motion';
-import { Code, Laptop, Database, Box, Calculator, Users } from 'lucide-react';
+import { Code, Laptop, Database, BarChart3, Box, Wrench, Calculator, Users } from 'lucide-react';
 
 const skills = [
   {
     icon: Code,
-    title: 'Programming',
-    desc: 'Python, C#, JavaScript, SQL, CSS'
-  },
-  {
-    icon: Laptop,
-    title: 'Web Development',
-    desc: 'HTML, CSS, CMS, Responsive Design, Git, GitHub'
+    title: 'Programming Languages',
+    desc: 'Python, SQL, C#, JavaScript'
   },
   {
     icon: Database,
-    title: 'Database',
-    desc: 'PostgreSQL, Database Management, Data Integrity, Reporting'
+    title: 'Databases',
+    desc: 'PostgreSQL, Database Design, Query Optimization, Data Integrity'
+  },
+  {
+    icon: BarChart3,
+    title: 'Data Analysis',
+    desc: 'Data Preprocessing, Data Annotation, Data Visualization, Excel, Financial Reporting'
+  },
+  {
+    icon: Laptop,
+    title: 'Frameworks & Web',
+    desc: 'Streamlit, .NET Web API, React, HTML, CSS, CMS'
   },
   {
     icon: Box,
     title: '3D Data Processing',
-    desc: 'VTK, Vedo, Data Visualization'
+    desc: 'VTK, Vedo, 3D Scan Data Processing'
+  },
+  {
+    icon: Wrench,
+    title: 'Tools',
+    desc: 'Git, GitHub, Microsoft Excel'
   },
   {
     icon: Calculator,
     title: 'Mathematics',
     desc: 'Mathematical Modeling, Analytics, Analytical Thinking, Problem Solving'
+  },
+  {
+    icon: Users,
+    title: 'Leadership',
+    desc: 'Project Coordination, Mentoring, Workshop Organization, Team Collaboration'
   }
 ];
 
