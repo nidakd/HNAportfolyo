@@ -67,8 +67,8 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-[var(--color-text-light)] text-sm md:text-base leading-relaxed"
             >
-              I am a senior Mathematics (English) student at Bolu Abant Izzet Baysal University and a Computer Programming
-              graduate. I combine mathematical thinking with software skills to solve problems analytically.
+              I am a Mathematics (English) graduate of Abant Izzet Baysal University and a Computer Programming
+              graduate of Anadolu University. I combine mathematical thinking with software skills to solve problems analytically.
             </motion.p>
 
             <motion.p
@@ -81,7 +81,7 @@ const About = () => {
               My core expertise lies in Python, with hands-on experience in 3D data processing (VTK, Vedo) and AI data
               annotation at Bilişim Vadisi. I also have a strong background in web design (HTML, CSS, CMS) from my time at
               Serbay, where I bridged the gap between complex data and user-centric design. Alongside my technical
-              projects, my 3-year background in accounting has strengthened my attention to detail and data integrity. I
+              projects, my 4-year background in accounting has strengthened my attention to detail and data integrity. I
               am also proficient in PostgreSQL and have experience with C#.
             </motion.p>
 
@@ -92,8 +92,8 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-[var(--color-text-light)] text-sm md:text-base leading-relaxed"
             >
-              As the Software & Technical Team Lead at GDG on Campus, I coordinate projects and mentor developers. I am
-              driven by a passion for technology, aiming to deliver robust, data-driven solutions in software and data
+              As the Software & Technical Team Lead at GDG on Campus, I lead a team of 10+, coordinate projects and
+              mentor developers; together we have organized 48 events reaching over 1,500 participants. I am driven by a passion for technology, aiming to deliver robust, data-driven solutions in software and data
               science.
             </motion.p>
           </div>
