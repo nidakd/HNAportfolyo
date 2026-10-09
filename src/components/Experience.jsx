@@ -10,18 +10,11 @@ const experiences = [
     desc: 'Developed CMS-based websites, structured layouts with HTML/CSS, optimized digital assets, and managed content administration via management panels.'
   },
   {
-    title: 'Computer Programming Graduate',
-    company: 'Anadolu University',
-    subtitle: 'Associate Degree',
-    date: 'Graduated · 2026',
-    desc: 'Completed Computer Programming associate degree with a strong focus on SQL and Python, including database design, query optimization, and data-driven application development.'
-  },
-  {
     title: 'Software & Technical Team Lead',
     company: 'GDG on Campus',
-    subtitle: 'Bolu Abant Izzet Baysal University',
+    subtitle: 'Abant Izzet Baysal University',
     date: 'Sep 2025 – Present',
-    desc: 'Coordinate development lifecycles of technical projects, mentor team members, organize hands-on workshops and coding events, and foster a collaborative developer community.'
+    desc: 'Lead a technical team of 10+ members, coordinate project development lifecycles, and mentor developers. Organized 48 workshops and coding events reaching over 1,500 participants.'
   },
   {
     title: 'Software Development Intern',
@@ -31,19 +24,32 @@ const experiences = [
     desc: 'Worked on 3D intraoral scan data for AI model training, performing data annotation and preprocessing using VTK and Vedo Python libraries. Maintained version control via Git.'
   },
   {
-    title: 'Mathematics Student',
-    company: 'Abant Izzet Baysal University',
-    subtitle: "Bachelor's Degree",
-    date: 'Senior Year',
-    desc: "Currently pursuing Bachelor's degree in Mathematics (English). Specializing in mathematical modeling, analytics, and computational mathematics."
-  },
-  {
     title: 'Site Accountant',
     company: 'Residential Site Management',
     subtitle: '',
     date: '2022 – Present',
     desc: 'Manage comprehensive financial operations for a residential complex using advanced Excel systems to track income, expenses, and resident payments with high precision.'
   }
+];
+
+const education = [
+  {
+    title: "Bachelor's Degree in Mathematics (English)",
+    school: 'Abant Izzet Baysal University',
+    desc: 'Focused on mathematical modeling, analytics, and computational mathematics.'
+  },
+  {
+    title: 'Associate Degree in Computer Programming',
+    school: 'Anadolu University',
+    date: '2026',
+    desc: 'Strong focus on SQL and Python, including database design, query optimization, and data-driven application development.'
+  }
+];
+
+const languages = [
+  { name: 'Turkish', level: 'Native' },
+  { name: 'English', level: 'B2' },
+  { name: 'French', level: 'A2' }
 ];
 
 const TimelineItem = ({ exp, index }) => {
@@ -164,10 +170,12 @@ const Experience = () => {
           className="mb-16"
         >
           <h2 className="text-4xl uppercase font-bold text-white relative inline-block after:content-[''] after:absolute after:-bottom-3 after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-1 after:bg-[var(--color-accent)] after:rounded-sm">
-            Experience
+            Experience & Education
           </h2>
         </motion.div>
 
+        {/* Experience container */}
+        <h3 className="text-xl uppercase font-semibold text-[var(--color-accent)] tracking-widest mb-10">Experience</h3>
         {/* Timeline */}
         <div ref={containerRef} className="relative">
           {/* Vertical line (desktop) */}
@@ -185,6 +193,45 @@ const Experience = () => {
             ))}
           </div>
         </div>
+
+        {/* Education container */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 md:mt-24 bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-3xl p-6 md:p-10 text-left"
+        >
+          <h3 className="text-xl uppercase font-semibold text-[var(--color-accent)] tracking-widest mb-8 text-center">Education</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {education.map((edu) => (
+              <div
+                key={edu.title}
+                className="group relative bg-[var(--color-dark-bg)] border border-[var(--color-border-color)] rounded-2xl p-6 hover:border-[var(--color-accent)] transition-colors duration-300 overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent rounded-t-2xl scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                {edu.date && (
+                  <span className="inline-block text-xs font-mono text-[var(--color-accent)] mb-2 tracking-widest uppercase">{edu.date}</span>
+                )}
+                <h4 className="text-base font-semibold text-white mb-0.5">{edu.title}</h4>
+                <div className="text-[var(--color-accent)] text-sm font-medium">{edu.school}</div>
+                <p className="text-[var(--color-text-light)] text-xs leading-relaxed mt-3">{edu.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-3">
+            <span className="text-xs uppercase tracking-widest text-[var(--color-text-light)] mr-2">Languages</span>
+            {languages.map((lang) => (
+              <span
+                key={lang.name}
+                className="text-sm text-white border border-[var(--color-border-color)] rounded-full px-4 py-1.5"
+              >
+                {lang.name} <span className="text-[var(--color-accent)] font-medium">· {lang.level}</span>
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
       {/* Bottom Glow Line */}
