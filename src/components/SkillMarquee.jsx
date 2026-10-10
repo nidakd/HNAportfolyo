@@ -1,12 +1,19 @@
 import { motion } from 'framer-motion';
-import { BiLogoPython, BiLogoReact, BiLogoPostgresql, BiCube, BiData } from 'react-icons/bi';
+import { SiPython, SiFastapi, SiPandas, SiNumpy, SiPostgresql, SiReact, SiTypescript, SiDocker, SiGit, SiDotnet } from 'react-icons/si';
+import { BiCube } from 'react-icons/bi';
 
 const skills = [
-  { name: 'Python', icon: BiLogoPython },
-  { name: 'React', icon: BiLogoReact },
-  { name: 'PostgreSQL', icon: BiLogoPostgresql },
+  { name: 'Python', icon: SiPython },
+  { name: 'FastAPI', icon: SiFastapi },
+  { name: 'pandas', icon: SiPandas },
+  { name: 'NumPy', icon: SiNumpy },
+  { name: 'PostgreSQL', icon: SiPostgresql },
+  { name: 'React', icon: SiReact },
+  { name: 'TypeScript', icon: SiTypescript },
+  { name: '.NET', icon: SiDotnet },
+  { name: 'Docker', icon: SiDocker },
+  { name: 'Git', icon: SiGit },
   { name: 'VTK & Vedo', icon: BiCube },
-  { name: 'Data Analysis', icon: BiData },
 ];
 
 const SkillMarquee = () => {

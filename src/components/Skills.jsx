@@ -1,47 +1,17 @@
 import { motion } from 'framer-motion';
-import { Code, Laptop, Database, BarChart3, Box, Wrench, Calculator, Users } from 'lucide-react';
+import { Code, Laptop, Database, BarChart3, Box, Wrench, Calculator, Users, Server, Brain } from 'lucide-react';
 
 const skills = [
-  {
-    icon: Code,
-    title: 'Programming Languages',
-    desc: 'Python, SQL, C#, JavaScript'
-  },
-  {
-    icon: Database,
-    title: 'Databases',
-    desc: 'PostgreSQL, Database Design, Query Optimization, Data Integrity'
-  },
-  {
-    icon: BarChart3,
-    title: 'Data Analysis',
-    desc: 'Data Preprocessing, Data Annotation, Data Visualization, Excel, Financial Reporting'
-  },
-  {
-    icon: Laptop,
-    title: 'Frameworks & Web',
-    desc: 'Streamlit, .NET Web API, React, HTML, CSS, CMS'
-  },
-  {
-    icon: Box,
-    title: '3D Data Processing',
-    desc: 'VTK, Vedo, 3D Scan Data Processing'
-  },
-  {
-    icon: Wrench,
-    title: 'Tools',
-    desc: 'Git, GitHub, Microsoft Excel'
-  },
-  {
-    icon: Calculator,
-    title: 'Mathematics',
-    desc: 'Mathematical Modeling, Analytics, Analytical Thinking, Problem Solving'
-  },
-  {
-    icon: Users,
-    title: 'Leadership',
-    desc: 'Project Coordination, Mentoring, Workshop Organization, Team Collaboration'
-  }
+  { icon: Code, title: 'Programming Languages', desc: 'Python, SQL, C#, JavaScript, TypeScript, HTML, CSS' },
+  { icon: BarChart3, title: 'Data & Analysis', desc: 'pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook, Data Preprocessing, Data Visualization, Excel (Advanced)' },
+  { icon: Database, title: 'Databases', desc: 'PostgreSQL, SQLAlchemy, Alembic, Database Design, Query Optimization' },
+  { icon: Server, title: 'Backend & Frameworks', desc: 'FastAPI, ASP.NET Core Web API, Entity Framework Core, Streamlit, Pydantic, pytest' },
+  { icon: Laptop, title: 'Frontend & Web', desc: 'React, TypeScript, Tailwind CSS, Responsive Web Design, CMS' },
+  { icon: Brain, title: 'AI & 3D Data', desc: 'Gemini API (LLM integration), Logistic Regression, Backtesting, Data Annotation, VTK, Vedo, 3D Mesh Processing' },
+  { icon: Wrench, title: 'Tools & Platforms', desc: 'Git, GitHub, Docker, VS Code, Visual Studio, pgAdmin, Postman, Swagger, Supabase' },
+  { icon: Box, title: 'Architecture', desc: 'REST APIs, WebSockets, Event-Driven & Hexagonal Architecture, Unit Testing' },
+  { icon: Calculator, title: 'Mathematics', desc: 'Mathematical Modeling, Statistics, Probability, Linear Algebra, Analytical Problem Solving' },
+  { icon: Users, title: 'Leadership', desc: 'Team Leadership, Mentoring, Workshop Instruction, Event Organization' }
 ];
 
 const Skills = () => {
