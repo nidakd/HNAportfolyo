@@ -42,7 +42,7 @@ const Skills = () => {
         <motion.div
           className="flex gap-6 w-max px-3"
           animate={{ x: ['0%', '-50%'] }}
-          transition={{ ease: 'linear', duration: 40, repeat: Infinity }}
+          transition={{ ease: 'linear', duration: 100, repeat: Infinity }}
         >
           {duplicatedSkills.map((skill, index) => {
             const Icon = skill.icon;
