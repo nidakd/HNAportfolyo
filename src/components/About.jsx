@@ -67,8 +67,9 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-[var(--color-text-light)] text-sm md:text-base leading-relaxed"
             >
-              I am a Mathematics (English) graduate of Abant Izzet Baysal University and a Computer Programming
-              graduate of Anadolu University. I combine mathematical thinking with software skills to solve problems analytically.
+              I am a Software Developer with a B.Sc. in Mathematics (English) from Abant Izzet Baysal University and an
+              associate degree in Computer Programming from Anadolu University. I build data-driven applications with
+              Python, SQL and FastAPI, combining mathematical thinking with software skills to solve problems analytically.
             </motion.p>
 
             <motion.p
@@ -78,11 +79,12 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[var(--color-text-light)] text-sm md:text-base leading-relaxed"
             >
-              My core expertise lies in Python, with hands-on experience in 3D data processing (VTK, Vedo) and AI data
-              annotation at Bilişim Vadisi. I also have a strong background in web design (HTML, CSS, CMS) from my time at
-              Serbay, where I bridged the gap between complex data and user-centric design. Alongside my technical
-              projects, my 4-year background in accounting has strengthened my attention to detail and data integrity. I
-              am also proficient in PostgreSQL and have experience with C#.
+              My work ranges from an event-driven, machine-learning-assisted decision engine I designed end to end, to an
+              AI legal research assistant built at a 24-hour hackathon and full-stack web applications. At Armada Yazılım
+              (Bilişim Vadisi) I labeled and processed about 1,000 3D intraoral scans for AI model training with VTK and
+              Vedo, and at Serbay I developed CMS-based websites and wrote Python scripts for data extraction and
+              validation. As a volunteer site accountant since 2022, I prepare monthly financial reports for a 60-resident
+              complex, which keeps my focus on data accuracy.
             </motion.p>
 
             <motion.p
@@ -92,9 +94,9 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-[var(--color-text-light)] text-sm md:text-base leading-relaxed"
             >
-              As the Software & Technical Team Lead at GDG on Campus, I lead a team of 5+, coordinate projects and
-              mentor developers; together we have organized 48 events reaching over 1,500 participants. I am driven by a passion for technology, aiming to deliver robust, data-driven solutions in software and data
-              science.
+              As Software & Technical Team Lead at GDG on Campus, I led a team of 5+ and co-organized 48 events reaching
+              over 1,500 participants; today I continue as a mentor in the same community. I also mentored in mathematics
+              at the NASA International Space Apps Challenge 2025.
             </motion.p>
           </div>
 
