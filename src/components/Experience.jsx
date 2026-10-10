@@ -228,13 +228,13 @@ const Experience = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left"
         >
           {/* Education */}
-          <div>
+          <div className="flex flex-col">
             <SubHeading icon={GraduationCap}>Education</SubHeading>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 flex-1">
               {education.map((edu) => (
                 <div
                   key={edu.field}
-                  className="group relative bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-2xl p-6 hover:border-[var(--color-accent)] transition-colors duration-300 overflow-hidden"
+                  className="group relative flex-1 bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-2xl p-6 hover:border-[var(--color-accent)] transition-colors duration-300 overflow-hidden"
                 >
                   <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent rounded-t-2xl scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                   <span className="block text-xs font-mono text-[var(--color-accent)] mb-2 tracking-widest uppercase">{edu.level}</span>
@@ -263,11 +263,11 @@ const Experience = () => {
 
             <div className="mt-6">
               <SubHeading icon={Languages}>Languages</SubHeading>
-              <div className="flex flex-wrap gap-3">
+              <div className="bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-2xl px-6 py-4 flex flex-wrap gap-2">
                 {languages.map((lang) => (
                   <span
                     key={lang.name}
-                    className="text-sm text-white bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-full px-4 py-1.5"
+                    className="text-sm text-white bg-[var(--color-dark-bg)] border border-[var(--color-border-color)] rounded-full px-4 py-1.5"
                   >
                     {lang.name} <span className="text-[var(--color-accent)] font-medium">· {lang.level}</span>
                   </span>
