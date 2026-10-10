@@ -104,6 +104,14 @@ const Contact = () => {
           </motion.a>
 
         </div>
+
+        {/* CV download */}
+        <p className="mt-8 text-sm text-[var(--color-text-light)]">
+          Prefer a résumé?{' '}
+          <a href="/cv/Hasibe_Nida_Akdogan_CV_EN.pdf" download className="text-[var(--color-accent)] font-medium hover:underline underline-offset-4">Download CV (EN)</a>
+          <span className="mx-2 text-white/20">·</span>
+          <a href="/cv/Hasibe_Nida_Akdogan_CV_TR.pdf" download className="text-[var(--color-accent)] font-medium hover:underline underline-offset-4">Özgeçmiş (TR)</a>
+        </p>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(188,124,14,0.3)] to-transparent" />

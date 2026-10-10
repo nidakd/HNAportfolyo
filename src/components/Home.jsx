@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 const MATH_CHARS = '0123456789∑∫π∞√≠≈≤≥+-=*/%Δ∇Ωθλμ';
 
@@ -76,6 +76,15 @@ const Home = () => {
               </span>
               See my works
             </a>
+            <div className="flex items-center gap-3">
+              <a href="/cv/Hasibe_Nida_Akdogan_CV_EN.pdf" download className="inline-flex items-center gap-2 border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-black transition-colors rounded-full py-2.5 px-6 font-medium text-sm w-fit">
+                <Download className="w-4 h-4" />
+                Download CV
+              </a>
+              <a href="/cv/Hasibe_Nida_Akdogan_CV_TR.pdf" download title="Özgeçmiş (Türkçe)" className="text-xs font-medium text-[var(--color-text-light)] hover:text-[var(--color-accent)] transition-colors underline underline-offset-4">
+                TR
+              </a>
+            </div>
           </motion.div>
         </div>
 
