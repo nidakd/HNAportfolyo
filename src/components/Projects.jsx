@@ -2,23 +2,38 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: 'NDA Trading',
+    tag: 'Algorithmic Decision Engine · In development',
+    desc: 'An asynchronous, event-driven decision core for crypto futures (Binance USDT-M) that ingests live market data, scores signals across multiple strategies, filters them with machine learning and executes orders under risk rules. Built on a hexagonal (ports and adapters) architecture with a NumPy-vectorized indicator engine, an online logistic-regression signal filter, a backtesting pipeline and a paper-trading simulator, plus a JWT-secured FastAPI REST/WebSocket API, a React + TypeScript dashboard, PostgreSQL (SQLAlchemy, Alembic) and 187 automated pytest tests.',
+    stack: 'Python · FastAPI · NumPy · PostgreSQL · React · TypeScript',
+    links: [
+      { text: 'Private repository' }
+    ]
+  },
+  {
     title: 'Site Accounting App',
-    desc: 'A professional accounting interface for residential site/building management, developed with Python, Streamlit, and PostgreSQL. It manages dues, fuel, and carry-over debts with block-based tracking, FIFO-based collection logic, and automated receipt generation. The project also supports CSV import and follows a modular architecture for scalability and maintainability.',
+    tag: 'Financial transparency for residential sites',
+    desc: 'An accounting system for residential site management, designed to increase financial transparency and prevent misuse of funds. Tracks dues, fuel costs and carry-over debts per building block with FIFO-based payment allocation, automated receipt generation and CSV import on a modular architecture.',
+    stack: 'Python · Streamlit · PostgreSQL',
     links: [
       { text: 'View Project ->', url: 'https://github.com/nidakd/site-accounting-app' },
       { text: 'Download PDF Report ->', url: '/docs/site-accounting-app-report.pdf', download: true }
     ]
   },
   {
-    title: 'LTS Alpha Core',
-    desc: 'LTS Alpha Core is a platform-agnostic autonomous trading system built in Python, designed to work with brokers like MT5, Binance, and paper trading environments. The project includes a modular architecture with broker interfaces, strategy layers, market data models, and a simulation-ready PaperBroker for risk-free testing. It is currently in active alpha development with planned Telegram control, web admin panel, and multi-broker expansion.',
+    title: 'EmsalAI',
+    tag: "AI Legal Research Assistant · GDG Hackathon '26",
+    desc: 'Built with a 3-person team in a 24-hour hackathon: an AI assistant that finds relevant statutes and precedent decisions for legal cases. I contributed to both the asynchronous FastAPI backend (Gemini 2.5 Flash Lite with Server-Sent Events streaming) and the React frontend.',
+    stack: 'FastAPI · Gemini API · React · Tailwind CSS · Supabase',
     links: [
-      { text: 'View Project (Private) ->', url: 'https://github.com/nidakd/LTSAlphaCore' }
+      { text: 'View Project ->', url: 'https://github.com/nidakd/GDGHACKATHON-EMSALAI' }
     ]
   },
   {
     title: 'Product Stock Management',
-    desc: 'A full-stack inventory management platform built with .NET Web API, React, and PostgreSQL. It provides a responsive dashboard for managing products through CRUD operations, search functionality, validation, logging, and automatic database setup. The project follows a clean architecture with a focus on maintainability, usability, and real-world application flow.',
+    tag: 'Capstone project · Web Build Program',
+    desc: 'A full-stack inventory application with CRUD operations, search, validation, logging and automatic database setup, exposing a Swagger-documented REST API.',
+    stack: 'ASP.NET Core Web API · Entity Framework Core · React · PostgreSQL',
     links: [
       { text: 'View Project ->', url: 'https://github.com/nidakd/product-stock-api' }
     ]
@@ -53,6 +68,8 @@ const Projects = () => {
               className={`group relative rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col border p-8 ${
                 index === 0 ? 'md:row-span-2' : ''
               } ${
+                index === projects.length - 1 && projects.length % 2 === 0 ? 'md:col-span-2' : ''
+              } ${
                 index === 2
                   ? 'bg-[var(--color-accent)] border-transparent hover:border-black/20'
                   : 'bg-[var(--color-card-bg)] border-[var(--color-border-color)] hover:border-[var(--color-accent)]'
@@ -62,12 +79,22 @@ const Projects = () => {
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-t-3xl" />
               )}
               <div className="flex flex-col h-full relative z-10">
-                <h3 className={`text-2xl font-bold mb-4 ${index === 2 ? 'text-black' : 'text-white'}`}>{project.title}</h3>
+                <h3 className={`text-2xl font-bold mb-1 ${index === 2 ? 'text-black' : 'text-white'}`}>{project.title}</h3>
+                {project.tag && (
+                  <p className={`text-xs font-mono uppercase tracking-wider mb-4 ${index === 2 ? 'text-black/60' : 'text-[var(--color-accent)]'}`}>{project.tag}</p>
+                )}
                 <p className={`text-sm leading-relaxed flex-grow ${index === 2 ? 'text-black/80' : 'text-[var(--color-text-light)]'}`}>
                   {project.desc}
                 </p>
-                <div className="flex flex-col gap-3 mt-8">
-                  {project.links.map((link, i) => (
+                {project.stack && (
+                  <p className={`text-xs mt-5 ${index === 2 ? 'text-black/70 font-medium' : 'text-white/70'}`}>{project.stack}</p>
+                )}
+                <div className="flex flex-col gap-3 mt-6">
+                  {project.links.map((link, i) => !link.url ? (
+                    <span key={i} className={`text-sm font-medium ${index === 2 ? 'text-black/60' : 'text-[var(--color-text-light)]'}`}>
+                      {link.text}
+                    </span>
+                  ) : (
                     <a
                       key={i}
                       href={link.url}
