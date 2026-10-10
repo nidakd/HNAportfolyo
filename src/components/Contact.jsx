@@ -31,7 +31,7 @@ const Contact = () => {
 
           {/* LinkedIn — tall left */}
           <motion.a
-            href="https://www.linkedin.com/in/nida-akdo%C4%9Fan-2b72b429a/"
+            href="https://www.linkedin.com/in/nidaakdogan/"
             target="_blank" rel="noopener noreferrer"
             custom={0} variants={cardVariants}
             initial="hidden" whileInView="visible"
