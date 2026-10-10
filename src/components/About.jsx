@@ -92,7 +92,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-[var(--color-text-light)] text-sm md:text-base leading-relaxed"
             >
-              As the Software & Technical Team Lead at GDG on Campus, I lead a team of 10+, coordinate projects and
+              As the Software & Technical Team Lead at GDG on Campus, I lead a team of 5+, coordinate projects and
               mentor developers; together we have organized 48 events reaching over 1,500 participants. I am driven by a passion for technology, aiming to deliver robust, data-driven solutions in software and data
               science.
             </motion.p>

@@ -14,7 +14,7 @@ const experiences = [
     company: 'GDG on Campus',
     subtitle: 'Abant Izzet Baysal University',
     date: 'Sep 2025 – Present',
-    desc: 'Lead a technical team of 10+ members, coordinate project development lifecycles, and mentor developers. Organized 48 workshops and coding events reaching over 1,500 participants.'
+    desc: 'Lead a technical team of 5+ members, coordinate project development lifecycles, and mentor developers. Organized 48 workshops and coding events reaching over 1,500 participants.'
   },
   {
     title: 'Software Development Intern',
