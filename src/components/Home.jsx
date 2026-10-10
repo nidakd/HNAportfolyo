@@ -57,7 +57,7 @@ const Home = () => {
               Available for Work
             </div>
             <h1 className="text-2xl uppercase md:text-3xl lg:text-4xl font-medium leading-tight text-accent font-mono tracking-tight">
-              <DecryptText text="Data-Driven" /> <br /> <DecryptText text="Software Development" />
+              <DecryptText text="Data-Driven" /> <br /> <DecryptText text="Software Developer" />
             </h1>
           </motion.div>
 
@@ -70,19 +70,18 @@ const Home = () => {
             <p className="text-[var(--color-text-light)] text-sm md:text-base max-w-sm">
               Software Developer building data-driven applications with Python, SQL and FastAPI, from a machine-learning-assisted decision engine to full-stack web apps, grounded in a Mathematics degree.
             </p>
-            <a href="#Projects" className="inline-flex items-center gap-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] transition-colors text-black rounded-full py-2.5 px-6 font-medium text-sm w-fit shadow-[0_0_20px_rgba(223,255,0,0.3)]">
-              <span className="bg-black text-[var(--color-accent)] rounded-full p-1">
-                <ArrowRight className="w-4 h-4" />
-              </span>
-              See my works
-            </a>
-            <div className="flex items-center gap-3">
-              <a href="/cv/Hasibe_Nida_Akdogan_CV_EN.pdf" download className="inline-flex items-center gap-2 border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-black transition-colors rounded-full py-2.5 px-6 font-medium text-sm w-fit">
-                <Download className="w-4 h-4" />
-                Download CV
+            <div className="flex flex-wrap items-center gap-3 md:flex-row-reverse md:justify-start">
+              <a href="#Projects" className="inline-flex items-center gap-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] transition-colors text-black rounded-full py-2.5 pl-2.5 pr-6 font-medium text-sm w-fit shadow-[0_0_20px_rgba(223,255,0,0.3)]">
+                <span className="bg-black text-[var(--color-accent)] rounded-full p-1">
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+                See my works
               </a>
-              <a href="/cv/Hasibe_Nida_Akdogan_CV_TR.pdf" download title="Özgeçmiş (Türkçe)" className="text-xs font-medium text-[var(--color-text-light)] hover:text-[var(--color-accent)] transition-colors underline underline-offset-4">
-                TR
+              <a href="/cv/Hasibe_Nida_Akdogan_CV_EN.pdf" download className="inline-flex items-center gap-3 border border-[var(--color-border-color)] hover:border-[var(--color-accent)] text-white hover:text-[var(--color-accent)] transition-colors rounded-full py-2.5 pl-2.5 pr-6 font-medium text-sm w-fit">
+                <span className="border border-current rounded-full p-1">
+                  <Download className="w-4 h-4" />
+                </span>
+                Download CV
               </a>
             </div>
           </motion.div>
