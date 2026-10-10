@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { GraduationCap, Award, Languages } from 'lucide-react';
 
 const experiences = [
   {
@@ -41,15 +42,16 @@ const experiences = [
 
 const education = [
   {
-    title: "Bachelor's Degree in Mathematics (English)",
+    level: "Bachelor's Degree",
+    field: 'Mathematics (English)',
     school: 'Abant Izzet Baysal University',
     desc: 'Mathematical modeling, statistics, probability and linear algebra.'
   },
   {
-    title: 'Associate Degree in Computer Programming',
+    level: 'Associate Degree',
+    field: 'Computer Programming',
     school: 'Anadolu University',
-    date: '2026',
-    desc: 'Strong focus on SQL and Python, including database design, query optimization, and data-driven application development.'
+    desc: 'SQL and Python, database design, query optimization and data-driven application development.'
   }
 ];
 
@@ -66,6 +68,13 @@ const languages = [
   { name: 'English', level: 'B2' },
   { name: 'French', level: 'A2' }
 ];
+
+const SubHeading = ({ icon: Icon, children }) => (
+  <div className="flex items-center gap-2 mb-4 text-xs uppercase tracking-widest text-[var(--color-text-light)]">
+    <Icon className="w-4 h-4 text-[var(--color-accent)]" />
+    {children}
+  </div>
+);
 
 const TimelineItem = ({ exp, index }) => {
   const isLeft = index % 2 === 0;
@@ -209,54 +218,62 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Education container */}
+        {/* Education & certifications container */}
+        <h3 className="text-xl uppercase font-semibold text-[var(--color-accent)] tracking-widest mt-24 md:mt-28 mb-10">Education & Certifications</h3>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="mt-20 md:mt-24 bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-3xl p-6 md:p-10 text-left"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left"
         >
-          <h3 className="text-xl uppercase font-semibold text-[var(--color-accent)] tracking-widest mb-8 text-center">Education & Certifications</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {education.map((edu) => (
-              <div
-                key={edu.title}
-                className="group relative bg-[var(--color-dark-bg)] border border-[var(--color-border-color)] rounded-2xl p-6 hover:border-[var(--color-accent)] transition-colors duration-300 overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent rounded-t-2xl scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                {edu.date && (
-                  <span className="inline-block text-xs font-mono text-[var(--color-accent)] mb-2 tracking-widest uppercase">{edu.date}</span>
-                )}
-                <h4 className="text-base font-semibold text-white mb-0.5">{edu.title}</h4>
-                <div className="text-[var(--color-accent)] text-sm font-medium">{edu.school}</div>
-                <p className="text-[var(--color-text-light)] text-xs leading-relaxed mt-3">{edu.desc}</p>
-              </div>
-            ))}
+          {/* Education */}
+          <div>
+            <SubHeading icon={GraduationCap}>Education</SubHeading>
+            <div className="flex flex-col gap-4">
+              {education.map((edu) => (
+                <div
+                  key={edu.field}
+                  className="group relative bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-2xl p-6 hover:border-[var(--color-accent)] transition-colors duration-300 overflow-hidden"
+                >
+                  <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent rounded-t-2xl scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="block text-xs font-mono text-[var(--color-accent)] mb-2 tracking-widest uppercase">{edu.level}</span>
+                  <h4 className="text-base font-semibold text-white">{edu.field}</h4>
+                  <div className="text-[var(--color-text-light)] text-sm">{edu.school}</div>
+                  <p className="text-[var(--color-text-light)] text-xs leading-relaxed mt-3">{edu.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-white/5">
-            <h4 className="text-xs uppercase tracking-widest text-[var(--color-text-light)] mb-4 text-center">Certifications</h4>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+          {/* Certifications & languages */}
+          <div className="flex flex-col">
+            <SubHeading icon={Award}>Certifications</SubHeading>
+            <ul className="bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-2xl px-6 py-2">
               {certifications.map((c) => (
-                <li key={c.name} className="text-sm text-white flex justify-between gap-3 border-b border-white/5 pb-2">
-                  <span>{c.name} <span className="text-[var(--color-text-light)]">· {c.org}</span></span>
-                  <span className="text-[var(--color-accent)] font-mono text-xs shrink-0">{c.date}</span>
+                <li key={c.name} className="flex items-baseline gap-4 py-3 border-b border-white/5 last:border-b-0">
+                  <span className="text-xs font-mono text-[var(--color-accent)] w-10 shrink-0">{c.date}</span>
+                  <span className="text-sm">
+                    <span className="text-white font-medium">{c.name}</span>
+                    <span className="block text-xs text-[var(--color-text-light)]">{c.org}</span>
+                  </span>
                 </li>
               ))}
             </ul>
-          </div>
 
-          <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs uppercase tracking-widest text-[var(--color-text-light)] mr-2">Languages</span>
-            {languages.map((lang) => (
-              <span
-                key={lang.name}
-                className="text-sm text-white border border-[var(--color-border-color)] rounded-full px-4 py-1.5"
-              >
-                {lang.name} <span className="text-[var(--color-accent)] font-medium">· {lang.level}</span>
-              </span>
-            ))}
+            <div className="mt-6">
+              <SubHeading icon={Languages}>Languages</SubHeading>
+              <div className="flex flex-wrap gap-3">
+                {languages.map((lang) => (
+                  <span
+                    key={lang.name}
+                    className="text-sm text-white bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-full px-4 py-1.5"
+                  >
+                    {lang.name} <span className="text-[var(--color-accent)] font-medium">· {lang.level}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
