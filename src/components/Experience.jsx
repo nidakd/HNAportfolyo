@@ -3,32 +3,39 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const experiences = [
   {
-    title: 'Web Design Intern',
-    company: 'Serbay //',
-    subtitle: '',
-    date: 'Jan 2026 – Feb 2026',
-    desc: 'Developed CMS-based websites, structured layouts with HTML/CSS, optimized digital assets, and managed content administration via management panels.'
+    title: 'Mentor',
+    company: 'GDG on Campus',
+    subtitle: 'Abant Izzet Baysal University',
+    date: 'Sep 2026 – Present',
+    desc: 'Mentor community members and the technical team on software development projects across different technologies.'
   },
   {
     title: 'Software & Technical Team Lead',
     company: 'GDG on Campus',
     subtitle: 'Abant Izzet Baysal University',
-    date: 'Sep 2025 – Present',
-    desc: 'Lead a technical team of 5+ members, coordinate project development lifecycles, and mentor developers. Organized 48 workshops and coding events reaching over 1,500 participants.'
+    date: 'Sep 2025 – Sep 2026',
+    desc: 'Led a technical team of 5+ members and coordinated project development lifecycles. Co-organized 48 workshops, study groups and coding events reaching 1,500+ participants, and taught a Python 101 workshop as instructor.'
+  },
+  {
+    title: 'Web Design Intern',
+    company: 'Serbay Interactive',
+    subtitle: '',
+    date: 'Jan 2026 – Feb 2026',
+    desc: 'Developed CMS-based websites on Kod8 CMS with responsive, brand-consistent design; edited vector graphics with Inkscape and created QR menus for restaurant clients. Wrote Python scripts to extract web data into CSV and validate SQL database records.'
   },
   {
     title: 'Software Development Intern',
-    company: 'Armada Yazilim / Bilisim Vadisi',
+    company: 'Armada Yazılım / Bilişim Vadisi',
     subtitle: '',
     date: 'Aug 2025 – Sep 2025',
-    desc: 'Worked on 3D intraoral scan data for AI model training, performing data annotation and preprocessing using VTK and Vedo Python libraries. Maintained version control via Git.'
+    desc: 'Labeled about 1,000 3D intraoral scans for AI model training, color-coding each tooth by defined criteria in a Python-based viewer (VTK, Vedo), and processed 3D mesh data into training-ready datasets.'
   },
   {
-    title: 'Site Accountant',
+    title: 'Site Accountant (Volunteer)',
     company: 'Residential Site Management',
     subtitle: '',
-    date: '2022 – Present',
-    desc: 'Manage comprehensive financial operations for a residential complex using advanced Excel systems to track income, expenses, and resident payments with high precision.'
+    date: 'Jun 2022 – Present',
+    desc: 'Manage the finances of a 60-resident complex: monthly financial reports and analysis in Excel, payment records and bank reconciliation.'
   }
 ];
 
@@ -36,7 +43,7 @@ const education = [
   {
     title: "Bachelor's Degree in Mathematics (English)",
     school: 'Abant Izzet Baysal University',
-    desc: 'Focused on mathematical modeling, analytics, and computational mathematics.'
+    desc: 'Mathematical modeling, statistics, probability and linear algebra.'
   },
   {
     title: 'Associate Degree in Computer Programming',
@@ -44,6 +51,14 @@ const education = [
     date: '2026',
     desc: 'Strong focus on SQL and Python, including database design, query optimization, and data-driven application development.'
   }
+];
+
+const certifications = [
+  { name: 'Web Build Program (Full-Stack)', org: 'YOBODOBO', date: '2026' },
+  { name: 'GitHub Workshop', org: 'Management Information Society', date: '2026' },
+  { name: 'SQL / PostgreSQL Bootcamp', org: 'TurkStudentCo', date: '2025' },
+  { name: 'SQL Excellence Bootcamp', org: 'Techcareer.net', date: '2024' },
+  { name: 'Python & AI Fundamentals', org: 'Global AI Hub', date: '2024' }
 ];
 
 const languages = [
@@ -202,7 +217,7 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           className="mt-20 md:mt-24 bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-3xl p-6 md:p-10 text-left"
         >
-          <h3 className="text-xl uppercase font-semibold text-[var(--color-accent)] tracking-widest mb-8 text-center">Education</h3>
+          <h3 className="text-xl uppercase font-semibold text-[var(--color-accent)] tracking-widest mb-8 text-center">Education & Certifications</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {education.map((edu) => (
               <div
@@ -218,6 +233,18 @@ const Experience = () => {
                 <p className="text-[var(--color-text-light)] text-xs leading-relaxed mt-3">{edu.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-white/5">
+            <h4 className="text-xs uppercase tracking-widest text-[var(--color-text-light)] mb-4 text-center">Certifications</h4>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+              {certifications.map((c) => (
+                <li key={c.name} className="text-sm text-white flex justify-between gap-3 border-b border-white/5 pb-2">
+                  <span>{c.name} <span className="text-[var(--color-text-light)]">· {c.org}</span></span>
+                  <span className="text-[var(--color-accent)] font-mono text-xs shrink-0">{c.date}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-3">
