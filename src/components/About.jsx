@@ -69,7 +69,7 @@ const About = () => {
             >
               I am a Software Developer with a B.Sc. in Mathematics (English) from Abant Izzet Baysal University and an
               associate degree in Computer Programming from Anadolu University. I build data-driven applications with
-              Python, SQL and FastAPI, combining mathematical thinking with software skills to solve problems analytically.
+              Python and SQL, combining mathematical thinking with software skills to solve problems analytically.
             </motion.p>
 
             <motion.p

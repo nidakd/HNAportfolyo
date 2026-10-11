@@ -68,7 +68,7 @@ const Home = () => {
             className="flex flex-col md:items-end space-y-6 text-left md:text-right"
           >
             <p className="text-[var(--color-text-light)] text-sm md:text-base max-w-sm">
-              Software Developer building data-driven applications with Python, SQL and FastAPI, from a machine-learning-assisted decision engine to full-stack web apps, grounded in a Mathematics degree.
+              Software Developer building data-driven applications with Python and SQL, from a machine-learning-assisted decision engine to full-stack web apps, grounded in a Mathematics degree.
             </p>
             <div className="flex flex-wrap items-center gap-3 md:flex-row-reverse md:justify-start">
               <a href="#Projects" className="inline-flex items-center gap-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] transition-colors text-black rounded-full py-2.5 pl-2.5 pr-6 font-medium text-sm w-fit shadow-[0_0_20px_rgba(223,255,0,0.3)]">

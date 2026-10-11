@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
-import { SiPython, SiFastapi, SiPandas, SiNumpy, SiPostgresql, SiReact, SiTypescript, SiDocker, SiGit, SiDotnet } from 'react-icons/si';
+import { SiPython, SiPandas, SiNumpy, SiPostgresql, SiReact, SiTypescript, SiDocker, SiGit, SiDotnet } from 'react-icons/si';
 import { BiCube } from 'react-icons/bi';
 
 const skills = [
   { name: 'Python', icon: SiPython },
-  { name: 'FastAPI', icon: SiFastapi },
   { name: 'pandas', icon: SiPandas },
   { name: 'NumPy', icon: SiNumpy },
   { name: 'PostgreSQL', icon: SiPostgresql },
