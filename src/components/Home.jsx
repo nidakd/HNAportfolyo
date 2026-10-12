@@ -44,7 +44,7 @@ const Home = () => {
 
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32 md:pt-48">
         <div className="relative z-30 grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-16 md:mb-24">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -91,11 +91,11 @@ const Home = () => {
         <div className="relative w-full mt-8 md:mt-12">
 
           {/* Background Image (Middle layer) */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] max-w-[1200px] h-[80vh] pointer-events-none z-10 flex justify-center items-end">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] max-w-[1200px] h-[min(78vh,760px)] pointer-events-none z-10 flex justify-center items-end">
             <img
               src="/img/hero.png"
               alt="Hasibe Nida Akdoğan"
-              className="w-full h-full scale-130 origin-bottom object-contain object-bottom opacity-80"
+              className="w-full h-full scale-110 origin-bottom object-contain object-bottom opacity-80"
             />
           </div>
 
