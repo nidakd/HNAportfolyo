@@ -82,7 +82,7 @@ const TimelineItem = ({ exp, index }) => {
   return (
     <div className="relative flex items-start w-full mb-12 md:mb-0">
       {/* Mobile layout: all items left-aligned with left border */}
-      <div className="md:hidden w-full pl-8 border-l-2 border-[var(--color-accent)]/30 ml-4">
+      <div className="md:hidden w-full pl-8 border-l-2 border-transparent ml-4">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -202,6 +202,14 @@ const Experience = () => {
         <h3 className="text-xl uppercase font-semibold text-[var(--color-accent)] tracking-widest mb-10">Experience</h3>
         {/* Timeline */}
         <div ref={containerRef} className="relative">
+          {/* Vertical line (mobile) */}
+          <div className="md:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-white/5">
+            <motion.div
+              style={{ height: lineHeight }}
+              className="w-full bg-gradient-to-b from-[var(--color-accent)] to-[var(--color-accent)]/20"
+            />
+          </div>
+
           {/* Vertical line (desktop) */}
           <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-white/5">
             <motion.div
