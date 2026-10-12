@@ -88,7 +88,7 @@ const TimelineItem = ({ exp, index }) => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative"
+          className="relative text-left"
         >
           {/* Dot on the line */}
           <div className="absolute -left-[2.35rem] top-2 w-3 h-3 rounded-full bg-[var(--color-accent)] shadow-[0_0_10px_var(--color-accent)] border-2 border-[var(--color-dark-bg)]" />
