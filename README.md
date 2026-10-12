@@ -1,16 +1,53 @@
-# React + Vite
+# Hasibe Nida Akdoğan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio of Hasibe Nida Akdoğan, a Software Developer with a Mathematics (English) degree working with Python, SQL and data analytics.
 
-Currently, two official plugins are available:
+**Live:** [nidaakdogan.vercel.app](https://nidaakdogan.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- [React 19](https://react.dev) + [Vite](https://vite.dev)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Framer Motion](https://motion.dev) for animations
+- [lucide-react](https://lucide.dev) and [react-icons](https://react-icons.github.io/react-icons/) for icons
+- Deployed on [Vercel](https://vercel.com)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Sections
 
-## Expanding the Oxlint configuration
+| Section | Component |
+| --- | --- |
+| Hero with CV download | `src/components/Home.jsx` |
+| About | `src/components/About.jsx` |
+| Skills carousel and tech marquee | `src/components/Skills.jsx`, `src/components/SkillMarquee.jsx` |
+| Featured projects | `src/components/Projects.jsx` |
+| Experience timeline, education, certifications and languages | `src/components/Experience.jsx` |
+| Testimonials | `src/components/Testimonials.jsx` |
+| Contact | `src/components/Contact.jsx` |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+Other scripts:
+
+```bash
+npm run build    # production build into dist/
+npm run preview  # preview the production build
+npm run lint     # lint with oxlint
+```
+
+## Static assets
+
+- `public/cv/` — downloadable CVs (English and Turkish)
+- `public/docs/` — Site Accounting App project report
+- `public/og-image.jpg` — 1200×630 link preview image
+- `public/robots.txt`, `public/sitemap.xml` — SEO
+
+## Contact
+
+- LinkedIn: [linkedin.com/in/nidaakdogan](https://www.linkedin.com/in/nidaakdogan/)
+- GitHub: [github.com/nidakd](https://github.com/nidakd)
+- Email: hasibenidaakdogan@gmail.com
