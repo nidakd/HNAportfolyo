@@ -23,12 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# Docs
-DOKUMENTASYON.md
-BILESEN_ORNEKLERI.md
-HIZLI_REFERANSmd
-legacy/docs/
-YAPILACAKLAR.md
+# Docs & personal notes (root docs/ only — public/docs/ must stay published)
+/docs/
 .claude/
 
 # Unused / legacy files (kept locally, not published)
