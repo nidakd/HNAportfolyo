@@ -99,16 +99,8 @@ const Home = () => {
             />
           </div>
 
-          {/* Solid Text (Bottom layer, Behind Image) */}
-          <h2 className="relative z-0 w-full text-center text-[14vw] font-bold tracking-tighter leading-none select-none drop-shadow-2xl text-white">
-            Hasibe Nida
-          </h2>
-
-          {/* Outline Text (Top layer, In Front of Image) */}
-          <h2
-            className="absolute top-0 left-0 w-full text-center text-[14vw] font-bold tracking-tighter leading-none select-none z-20 pointer-events-none"
-            style={{ color: 'transparent', WebkitTextStroke: '3px white' }}
-          >
+          {/* Name (In Front of Image) */}
+          <h2 className="relative z-20 w-full text-center text-[14vw] font-bold tracking-tight leading-none select-none drop-shadow-2xl text-white font-[Inter,sans-serif]">
             Hasibe Nida
           </h2>
 
