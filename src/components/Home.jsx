@@ -12,7 +12,7 @@ const DecryptText = ({ text }) => {
   useEffect(() => {
     let iteration = 0;
     const interval = setInterval(() => {
-      setDisplayText((currentText) => {
+      setDisplayText(() => {
         return text
           .split('')
           .map((char, index) => {

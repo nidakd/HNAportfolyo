@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, UserCircle, Quote } from 'lucide-react';
 
@@ -7,7 +6,7 @@ const testimonials = [
     name: 'Ozkan GOZUTOK',
     role: 'Partner & Creative Director',
     company: 'Serbay // Digital Strategy',
-    img: '/img/özkangozutok.jpg',
+    img: '/img/ozkangozutok.jpg',
     text: '"During her internship in our web department, Nida distinguished herself as a disciplined and analytically-minded teammate. Her sense of ownership over assigned tasks and her solution-oriented approach enabled her to adapt to our processes in a very short time. Her seamless integration into the team and positive attitude significantly contributed not only to her individual performance but also to the overall team dynamics. Given her openness to growth and strong motivation to learn, I am confident she will achieve great success in her future professional endeavors."',
     rating: 5
   },
@@ -38,8 +37,6 @@ const Stars = ({ count }) => (
 );
 
 const Testimonials = () => {
-  const [expanded, setExpanded] = useState(false);
-
   const t0 = testimonials[0]; // Ozkan — large featured card
   const t1 = testimonials[1]; // Prof. Cansu
   const t2 = testimonials[2]; // Sam
