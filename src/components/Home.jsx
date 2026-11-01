@@ -100,7 +100,7 @@ const Home = () => {
           </div>
 
           {/* Name (In Front of Image) */}
-          <h2 className="relative z-20 w-full text-center text-[14vw] font-bold tracking-tight leading-none select-none drop-shadow-2xl text-white font-[Inter,sans-serif]">
+          <h2 className="relative z-20 w-full text-center whitespace-nowrap text-[min(14vw,190px)] font-bold tracking-tight leading-none select-none drop-shadow-2xl text-white font-[Inter,sans-serif]">
             Hasibe Nida
           </h2>
 
