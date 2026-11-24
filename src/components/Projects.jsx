@@ -11,13 +11,12 @@ const projects = [
     ]
   },
   {
-    title: 'Site Accounting App',
-    tag: 'Financial transparency for residential sites',
-    desc: 'An accounting system for residential site management, designed to increase financial transparency and prevent misuse of funds. Tracks dues, fuel costs and carry-over debts per building block with FIFO-based payment allocation, automated receipt generation and CSV import on a modular architecture.',
-    stack: 'Python · Streamlit · PostgreSQL',
+    title: 'Site Yönetim',
+    tag: 'Multi-tenant dues and accounting platform for residential sites',
+    desc: 'A multi-tenant SaaS for site, apartment and management-company dues, collections and accounting. Tenant isolation is enforced twice: in the application layer and with PostgreSQL row-level security. An immutable double-entry ledger with period locking, a tamper-proof audit trail, 2FA, and a resident portal with SMS login. Money logic lives in a framework-independent domain layer, backed by pytest and hypothesis tests that guarantee no cent is lost in allocation. Evolved from my earlier Streamlit prototype.',
+    stack: 'Python · Django · PostgreSQL (RLS) · HTMX · Alpine.js · Tailwind CSS · pytest',
     links: [
-      { text: 'View Project ->', url: 'https://github.com/nidakd/site-accounting-app' },
-      { text: 'Download PDF Report ->', url: '/docs/site-accounting-app-report.pdf', download: true }
+      { text: 'View Project ->', url: 'https://github.com/nidakd/site-yonetim' }
     ]
   },
   {

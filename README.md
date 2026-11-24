@@ -42,7 +42,7 @@ npm run lint     # lint with oxlint
 ## Static assets
 
 - `public/cv/` — downloadable CVs (English and Turkish)
-- `public/docs/` — Site Accounting App project report
+- `public/docs/` — Archived report of the earlier Site Accounting App prototype (no longer linked)
 - `public/og-image.jpg` — 1200×630 link preview image
 - `public/robots.txt`, `public/sitemap.xml` — SEO
 
