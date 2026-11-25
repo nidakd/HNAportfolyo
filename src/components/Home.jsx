@@ -57,6 +57,7 @@ const Home = () => {
               Available for Work
             </div>
             <h1 className="text-2xl uppercase md:text-3xl lg:text-4xl font-medium leading-tight text-accent font-mono tracking-tight">
+              <span className="sr-only">Hasibe Nida Akdoğan, </span>
               <DecryptText text="Data-Driven" /> <br /> <DecryptText text="Software Developer" />
             </h1>
           </motion.div>

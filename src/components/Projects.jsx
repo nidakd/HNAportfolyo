@@ -20,12 +20,12 @@ const projects = [
     ]
   },
   {
-    title: 'EmsalAI',
-    tag: "AI Legal Research Assistant · GDG Hackathon '26",
-    desc: 'Built with a 3-person team in a 24-hour hackathon: an AI assistant that finds relevant statutes and precedent decisions for legal cases. I contributed to both the asynchronous FastAPI backend (Gemini 2.5 Flash Lite with Server-Sent Events streaming) and the React frontend.',
-    stack: 'FastAPI · Gemini API · React · Tailwind CSS · Supabase',
+    title: 'GDG on Campus AİBÜ',
+    tag: 'Community website & admin panel · Live',
+    desc: 'The official website and management panel of the Google Developer Group at Bolu Abant İzzet Baysal University. Members can browse events, register and check in with QR codes, apply for membership and explore the project showcase and workshop resources, while the core team manages events, applications and announcements from a role-based admin panel. Events are synced automatically from the GDG Community platform, and access control is enforced with Supabase row-level security policies.',
+    stack: 'Next.js · TypeScript · Tailwind CSS · Supabase (RLS) · GSAP · Vercel',
     links: [
-      { text: 'View Project ->', url: 'https://github.com/nidakd/GDGHACKATHON-EMSALAI' }
+      { text: 'Visit Website ->', url: 'https://gdgoncampusaibu.vercel.app' }
     ]
   },
   {
