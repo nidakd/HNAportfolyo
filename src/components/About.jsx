@@ -79,8 +79,8 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[var(--color-text-light)] text-sm md:text-base leading-relaxed"
             >
-              My work ranges from an event-driven, machine-learning-assisted decision engine I designed end to end, to an
-              AI legal research assistant built at a 24-hour hackathon and full-stack web applications. At Armada Yazılım
+              My work ranges from an event-driven algorithmic trading research platform I designed end to end, to a
+              multi-tenant accounting platform and full-stack web applications. At Armada Yazılım
               (Bilişim Vadisi) I labeled and processed about 1,000 3D intraoral scans for AI model training with VTK and
               Vedo, and at Serbay I developed CMS-based websites and wrote Python scripts for data extraction and
               validation. As a volunteer site accountant since 2022, I prepare monthly financial reports for a 60-resident

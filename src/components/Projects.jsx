@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: 'NDA Trading',
-    tag: 'Algorithmic Decision Engine · In development',
-    desc: 'An asynchronous, event-driven decision core for crypto futures (Binance USDT-M) that ingests live market data, scores signals across multiple strategies, filters them with machine learning and executes orders under risk rules. Built on a hexagonal (ports and adapters) architecture with a NumPy-vectorized indicator engine, an online logistic-regression signal filter, a backtesting pipeline and a paper-trading simulator, plus a JWT-secured FastAPI REST/WebSocket API, a React + TypeScript dashboard, PostgreSQL (SQLAlchemy, Alembic) and 187 automated pytest tests.',
-    stack: 'Python · FastAPI · NumPy · PostgreSQL · React · TypeScript',
+    tag: 'Algorithmic Trading Research Platform · In development',
+    desc: 'An asynchronous, event-driven platform for Binance USDT-M futures that turns strategy research into a reproducible pipeline. A genetic "strategy factory" evolves strategies from 34 indicators and composable building blocks, backtests them on two independent simulation engines that model fees, slippage, funding and liquidation, and puts every candidate through nine anti-overfitting tests (locked holdout, Monte Carlo, cost stress, beat-random) before it can enter the strategy vault. Survivors are forward-tested in shadow mode on live data and then traded with real orders on Binance testnet, managed through Telegram. About 25,500 lines of Python and 672 pytest tests; testnet runs exposed five order-handling bugs that would have lost real money, each fixed with a regression test.',
+    stack: 'Python · asyncio · NumPy · ccxt · PostgreSQL · SQLAlchemy · Alembic · Parquet · pytest · Telegram Bot API',
     links: [
       { text: 'Private repository' }
     ]
